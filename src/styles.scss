@@ -1,1 +1,291 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --light-1: #C2C2C2;
+    --light-2: #DEDEDE;
+    --light-3: #E5E5E5;
+    --light-4: #EDEDED;
+  
+    --dark-1: #3C3C3C;
+    --dark-2: #222222;
+    --dark-3: #191919;
+    --dark-4: #111111;
+  
+    --orange: #FFC200;
+    --orange-20: #BF510C;
+  }
+
+/* globals */
+html {
+    height: 100%;
+}
+  
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--dark-4);
+    color: var(--light-2);
+    position: relative;
+}
+
+.panel {
+    background-size: 100%;
+    background-color: var(--dark-3);
+    border: 1px solid var(--dark-1);
+    padding: 30px;
+}
+
+.right-content {
+    padding: 25px;
+    grid-area: main;
+    grid-row: 2;
+}
+
+.left-content {
+    background: var(--dark-3);
+    padding: 25px;
+    grid-area: side-nav;
+    grid-row: 2;
+    height: auto;
+    min-height: calc(100vh - 95px);
+}
+
+p {
+    font-weight: 200;
+}
+
+/* anchors */
+a {
+    color: var(--orange);
+    text-decoration: underline;
+    text-transform: none;
+}
+  
+a:hover,
+a:focus {
+    color: var(--orange);
+    text-decoration: underline;
+}
+  
+a:active
+a.active {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+/* side-nav */
+.side-nav p,
+.side-nav a {
+    text-transform: uppercase;
+    color: var(--light-2);
+}
+
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  margin: 10px 0;
+  text-decoration: underline;
+  color: var(--orange-50);
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  border: 0;
+  text-transform: none;
+}
+
+.side-nav a.active:hover,
+.side-nav a:hover,
+.side-nav a:focus,
+.side-nav a:active,
+.side-nav a.active {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.side-nav a:active,
+.side-nav a.active {
+  color: var(--orange-20);
+  text-decoration: none;
+}
+
+.side-nav p {
+  font-weight: 700;
+  margin: 0;
+  padding: 0 0 5px;
+  border-bottom: 1px solid var(--dark-1);
+}
+
+.side-nav ul {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+}
+
+/* grid */
+.grid {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 375px 1fr 1fr 1fr;
+  grid-template-rows: 90px 1fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    "side-nav main main main"
+    "side-nav main main main";
+}
+
+/* header */
+.header {
+    background: var(--dark-2);
+    grid-area: header;
+    grid-row: 1;
+}
+  
+/* navbars */
+.navbar {
+    width: 100%;
+    padding: 25px;
+    box-shadow: 1px 0px 5px 0px var(--dark-1);
+    margin: 0;
+}
+
+.navbar-brand {
+    display: block;
+}
+
+.navbar-brand img {
+    display: block;
+    max-width: 50%;
+}
+
+
+/* global-nav */
+.global-nav ul a {
+    font-size: 20px;
+    background-color: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--light-3);
+    display: block;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.global-nav li {
+    margin-left: 15px;
+}
+
+.global-nav li a.active,
+.global-nav li a:hover {
+    background: var(--orange);
+    color: var(--dark-1)
+}
+
+.apps-dropdown {
+    float: left;
+    text-align: center;
+    margin: 15px 20px 0 0; 
+}
+
+.apps-dropdown li {
+    margin: 0;
+}
+
+
+/* dropdown menus */
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    min-width: 250px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    width: 100%;
+    font-size: 13px;
+    color: var(--dark-1);
+    border-radius: 0;
+    min-height: 50px;
+    padding: 15px 0;
+    margin: 0;
+    text-align: center;
+    background: var(--light-4);
+    border: 1px solid var(--light-1);
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:active {
+    background: var(--orange);
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background: var(--orange);
+    color: var(--dark-1);
+}
+
+.dropdown-item {
+    display: table;
+}
+
+
+/* headings */
+h1 {
+    margin: 35px 0 35px 15px;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: left;
+    margin: 0 0 25px;
+}
+
+h2 {
+    margin: 35px 0 15px;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: left;
+    clear: both;
+    text-transform: uppercase;
+}
+
+
+/* tables */
+.table {
+    margin: 0 0 10px;
+    table-layout: fixed;
+    width: 100%;
+
+    thead th {
+        font-weight: 600;
+        padding: 15px;
+        text-align: left;
+        text-transform: uppercase;
+        vertical-align: bottom;
+        border: 0 none;
+    }
+
+    tbody td {
+        font-weight: 400;
+        height: 50px;
+        padding: 30px;
+        text-align: left;
+        vertical-align: middle;
+        background-color: var(--dark-3);
+    }
+    
+}
+
+.table>:not(:first-child) {
+    border-top: 1px solid var(--dark-1);
+}

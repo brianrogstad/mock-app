@@ -1,0 +1,46 @@
+<h1>Home</h1>
+
+<div>
+    <table class="table table-dark table-bordered tray-entries">
+        <thead>
+            <th>Users</th>
+            <th>Posts</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>
+                    <p>
+                        <span class="subtitle">Username</span>: {{user.name}}
+                    </p>
+
+                    <p>
+                        <span class="subtitle">Person's Name</span>: {{user.name}}
+                    </p>
+
+                    <p>
+                        <span class="subtitle">Person's Address</span>:
+                        <span class="multi-line">Street: {{user.address.street}}</span>
+                        <span class="multi-line">City: {{user.address.city}}</span>
+                    </p>
+
+                    <p>
+                        <span class="subtitle">User Email Address</span>: {{user.email}}
+                    </p>
+                    <button class="btn btn-primary mb-4" (click)="matchComments(user.id)">
+                        Load Comments
+                    </button>
+                    <p>
+                        <span class="subtitle">Comment Title</span>: {{user.comments?.title}}
+                    </p>
+                    <p>
+                        <span class="subtitle">Comment Text</span>: {{user.comments?.body}}
+                    </p>
+                </td>
+                <td>
+                    {{user.post}}
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
